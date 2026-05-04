@@ -1,0 +1,60 @@
+{
+  "name": "derrick-mcp",
+  "version": "0.2.1",
+  "description": "Derrick B2B enrichment MCP server — find emails, enrich LinkedIn profiles, search companies, and more. Works with Claude Desktop, Claude Code, Cursor, and any MCP-compatible client.",
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/server.js",
+      "require": "./dist/server.js",
+      "types": "./dist/server.d.ts"
+    }
+  },
+  "bin": {
+    "derrick-mcp": "dist/server.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx src/server.ts",
+    "prepublishOnly": "rm -rf dist && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "derrick",
+    "enrichment",
+    "b2b",
+    "linkedin",
+    "email",
+    "sales",
+    "prospecting",
+    "claude",
+    "ai"
+  ],
+  "author": "Derrick App <contact@derrick-app.com> (https://derrick-app.com)",
+  "license": "MIT",
+  "homepage": "https://derrick-app.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DerrickAppOrg/derrick-mcp"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0"
+  }
+}
