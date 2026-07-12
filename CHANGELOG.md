@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add the `derrick_onboard` MCP prompt: a guided, one-step-at-a-time tutorial that gets a user a real result from a Derrick feature page, right in the chat. Takes an optional `goal` argument (the feature-page title). Served from the server so the behaviour is versioned centrally instead of pasted per feature page, and composes with the existing server instructions.
+
 ## 0.3.0
 
 - Send an `X-Derrick-Client: mcp` header on every API call so the backend can distinguish MCP usage from raw public-API calls.
