@@ -1,12 +1,12 @@
 # Derrick MCP Server
 
-B2B data enrichment tools for any MCP-compatible AI client — find emails, enrich LinkedIn profiles, search companies, and more.
+B2B data enrichment tools for any MCP-compatible AI client: find emails, enrich LinkedIn profiles, search companies, and more.
 
 Tools are **dynamically loaded** from the Derrick API at startup, so new actions are available automatically.
 
 ## Prerequisites
 
-- A Derrick account with the **Standard plan** ($20/mo) or above
+- A Derrick account with the **Standard plan** (20 EUR/mo) or above
 - An API key (get it from: Google Sheets > Derrick menu > burger icon > API)
 - Node.js 22+
 
