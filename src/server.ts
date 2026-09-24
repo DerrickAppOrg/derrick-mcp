@@ -11,6 +11,7 @@
  *   api.ts            — HTTP client + API key load/save/resolve
  *   format.ts         — response formatting + last-known credits cache
  *   prompts.ts        — cross-cutting prompt strings (server instructions, pricing)
+ *   onboarding.ts     — the derrick_onboard guided-tutorial MCP prompt
  *   toolOverrides.ts  — per-tool prompt overrides (workflow + next actions)
  *   tools.ts          — static + dynamic tool registration
  */
@@ -19,6 +20,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { loadApiKey } from './api.js';
 import { SERVER_INSTRUCTIONS } from './prompts.js';
+import { registerOnboardingPrompt } from './onboarding.js';
 import { registerStaticTools, registerDynamicTools } from './tools.js';
 
 /**
@@ -32,6 +34,7 @@ export async function createMcpServer(): Promise<McpServer> {
   );
 
   registerStaticTools(server);
+  registerOnboardingPrompt(server);
 
   // Warm the API key cache before dynamic tools register.
   loadApiKey();
