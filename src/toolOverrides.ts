@@ -42,7 +42,7 @@ export const TOOL_OVERRIDES: Record<string, ToolOverride> = {
     ].join('\n'),
     nextActions: [
       'Verify the email (verify_email — 1 credit)',
-      'Find their phone number (find_phone — 150 credits, requires confirmation)',
+      'Find their phone number (find_phone — 200 credits, requires confirmation)',
       'Enrich their LinkedIn profile (enrich_profile — 1 credit)',
     ],
   },
@@ -52,16 +52,16 @@ export const TOOL_OVERRIDES: Record<string, ToolOverride> = {
       'Returns a certainty level: ultra_sure, sure, risky, invalid, not_found. Charged 1 credit per call EVEN IF not_found.',
     nextActions: [
       'Enrich the LinkedIn profile of this person (enrich_profile — 1 credit)',
-      'Find their phone (find_phone — 150 credits, requires confirmation)',
+      'Find their phone (find_phone — 200 credits, requires confirmation)',
     ],
   },
 
   find_phone: {
     prompt: [
-      'HIGH COST: 150 credits per phone found. Charged ONLY on success.',
+      'HIGH COST: 200 credits per phone found. Charged ONLY on success.',
       'ALWAYS announce the cost in bold before calling and wait for explicit confirmation.',
       'If the user only has a name, mention chaining:',
-      '  search_linkedin_profile (1) + find_phone (150) = 151 credits total.',
+      '  search_linkedin_profile (1) + find_phone (200) = 201 credits total.',
     ].join('\n'),
     nextActions: [
       'Find their professional email (find_email — 5 credits)',
@@ -81,7 +81,7 @@ export const TOOL_OVERRIDES: Record<string, ToolOverride> = {
     nextActions: [
       'Enrich this profile for +15 attributes (enrich_profile — 1 credit)',
       'Find their professional email (find_email — 5 credits)',
-      'Find their phone (find_phone — 150 credits, requires confirmation)',
+      'Find their phone (find_phone — 200 credits, requires confirmation)',
     ],
   },
 
@@ -94,7 +94,7 @@ export const TOOL_OVERRIDES: Record<string, ToolOverride> = {
     ].join('\n'),
     nextActions: [
       'Find their email (find_email — 5 credits)',
-      'Find their phone (find_phone — 150 credits, requires confirmation)',
+      'Find their phone (find_phone — 200 credits, requires confirmation)',
       'Enrich their company (enrich_companies — 1 credit)',
     ],
   },

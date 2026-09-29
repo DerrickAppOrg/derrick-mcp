@@ -22,7 +22,7 @@ export function registerStaticTools(server: McpServer): void {
     {
       title: 'Configure Derrick API key',
       description:
-        'Save your Derrick API key locally. To get your key: install the Derrick Google Sheets extension (https://derrick-app.com), open a sheet > Derrick menu > burger icon > API. Requires Standard plan (€20/mo) or above.',
+        'Save your Derrick API key locally. To get your key: sign in to the Derrick web app (https://app.derrick-app.com) and open the API & MCP page, or in Google Sheets open the Derrick menu > burger icon > API. Requires the Plus plan (€47.50/mo) or above.',
       inputSchema: { api_key: z.string().describe('Your Derrick API key') },
       annotations: {
         readOnlyHint: false,
@@ -43,7 +43,7 @@ export function registerStaticTools(server: McpServer): void {
       if (status === 401) {
         return errorResult(
           'Invalid API key (authentication failed).\n' +
-            'Check your key in Google Sheets > Derrick menu > burger icon > API.',
+            'Check your key in the Derrick web app (API & MCP page) or in Google Sheets > Derrick menu > burger icon > API.',
         );
       }
       if (status < 200 || status >= 300) {
@@ -276,7 +276,7 @@ function buildHelpResponse(topic: string): string {
       '| Successful result  | Result returned                       | Yes      |',
       '',
       'Per-success billing (charged ONLY if a result is returned):',
-      '  find_email (5 credits), find_phone (150 credits)',
+      '  find_email (5 credits), find_phone (200 credits)',
       '',
       'Per-call billing (charged even if empty):',
       '  verify_email, enrich_profile, enrich_companies, search_linkedin_profile,',
@@ -315,7 +315,7 @@ function buildHelpResponse(topic: string): string {
     '  - Enrich a LinkedIn profile with +15 attributes (enrich_profile — 1 credit, per call)',
     '  - Find a professional email (find_email — 5 credits, per success)',
     '  - Verify an email (verify_email — 1 credit, per call)',
-    '  - Find a phone from a LinkedIn URL (find_phone — 150 credits, per success)',
+    '  - Find a phone from a LinkedIn URL (find_phone — 200 credits, per success)',
     '  - Followers & connections count (linkedin_profile_followers_count — 1 credit, per call)',
     '  - Get name from email (get_name_from_email — 1 credit, per call)',
     '  - Find gender from a name (find_gender — 1 credit, per call)',

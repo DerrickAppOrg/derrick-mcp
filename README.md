@@ -6,8 +6,8 @@ Tools are **dynamically loaded** from the Derrick API at startup, so new actions
 
 ## Prerequisites
 
-- A Derrick account with the **Standard plan** (20 EUR/mo) or above
-- An API key (get it from: Google Sheets > Derrick menu > burger icon > API)
+- A Derrick account with the **Plus plan** (47.50 EUR/mo) or above
+- An API key (get it from the Derrick web app at https://app.derrick-app.com, API & MCP page, or from Google Sheets > Derrick menu > burger icon > API)
 - Node.js 22+
 
 ## Setup

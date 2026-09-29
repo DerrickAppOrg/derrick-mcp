@@ -54,18 +54,18 @@ export function formatError(status: number, body: Record<string, any>): string {
       'To configure your key, say: "Configure Derrick with my API key: YOUR_KEY"',
       '',
       'To get your key:',
-      '  1. Install the Derrick Google Sheets extension: https://derrick-app.com',
-      '  2. Open a Google Sheet > Derrick menu > burger icon > API',
+      '  1. Sign in to the Derrick web app: https://app.derrick-app.com',
+      '  2. Open the API & MCP page (or in Google Sheets: Derrick menu > burger icon > API)',
       '  3. Copy your key',
       '',
-      'API access requires the Standard plan (€20/mo) or above.',
+      'API access requires the Plus plan (€47.50/mo) or above.',
     ].join('\n');
   }
   if (status === 402) {
     return 'Insufficient credits.\n\nRun derrick_upgrade to pick a plan and subscribe via Stripe Checkout, or visit https://derrick-app.com';
   }
   if (status === 403) {
-    return 'API access requires a Standard plan (€20/mo) or above.\nRun derrick_upgrade to pick a plan and subscribe via Stripe Checkout, or visit https://derrick-app.com';
+    return 'API access requires the Plus plan (€47.50/mo) or above.\nRun derrick_upgrade to pick a plan and subscribe via Stripe Checkout, or visit https://derrick-app.com';
   }
   if (status === 429) {
     return 'Rate limit exceeded (60 requests/minute). Wait a moment and retry.';
