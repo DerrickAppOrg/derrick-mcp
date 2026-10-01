@@ -9,9 +9,10 @@
 export const PRICING_MSG = [
   'Derrick plans (https://derrick-app.com):',
   '  MINI     — €9 / month   →  4,000 credits',
-  '  STANDARD — €20 / month  →  10,000 credits  (required for API access)',
-  '  PLUS     — €47.5 / month →  25,000 credits',
+  '  STANDARD — €20 / month  →  10,000 credits',
+  '  PLUS     — €47.5 / month →  25,000 credits  (API & MCP access from this plan)',
   '  PRO      — €175 / month →  100,000 credits',
+  '  SCALE    — €320 / month →  200,000 credits',
   'Unused credits roll over to the next month.',
 ].join('\n');
 
