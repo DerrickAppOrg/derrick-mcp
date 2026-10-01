@@ -161,7 +161,7 @@ export function registerStaticTools(server: McpServer): void {
         'Start the Derrick upgrade / subscription flow. Returns a one-click Stripe Checkout URL for the chosen plan.',
         '',
         'Workflow:',
-        '  1. If the user has named a plan (MINI / STANDARD / PLUS / PRO), call with `plan` set to that name. Returns a Checkout URL the user clicks to subscribe.',
+        '  1. If the user has named a plan (MINI / STANDARD / PLUS / PRO / SCALE), call with `plan` set to that name. Returns a Checkout URL the user clicks to subscribe.',
         '  2. If the user just says "upgrade" without picking a plan, call with no argument. The tool returns the live list of plans with prices and credits — ask the user which one, then re-call with `plan` set.',
         '',
         'ALWAYS call this tool when the user wants to upgrade, go premium, subscribe, or change plan. Do NOT hand out URLs from memory.',
@@ -175,7 +175,7 @@ export function registerStaticTools(server: McpServer): void {
           .string()
           .optional()
           .describe(
-            'Plan name: MINI, STANDARD, PLUS, or PRO. Omit to fetch the live plan list first.',
+            'Plan name: MINI, STANDARD, PLUS, PRO, or SCALE. Omit to fetch the live plan list first.',
           ),
       },
       annotations: {
